@@ -12,6 +12,7 @@ class ComposerStaticInit4fd57a2dd029a113b4f1685b7cf8494c
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'OpenWeather' => __DIR__ . '/../..' . '/Services/OpenWeather.php',
         'Routes' => __DIR__ . '/../..' . '/Utilities/Routes.php',
     );
 
