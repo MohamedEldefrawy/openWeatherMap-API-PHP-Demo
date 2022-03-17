@@ -1,0 +1,23 @@
+{
+  "name": "eldefrawy/php-webservicecs-demo",
+  "description": "consuming 3rd party api demo",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mohamed Eldefrawy",
+      "email": "Mohamed.Eldefrawy13026011@aiet.ed.eg"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "classmap": [
+      "Services",
+      "Utilities"
+    ],
+    "files": [
+      "config.php"
+    ]
+  }
+}
