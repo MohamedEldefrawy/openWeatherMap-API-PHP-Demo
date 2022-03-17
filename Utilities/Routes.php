@@ -16,6 +16,9 @@ class Routes
             case '/show-weather':
                 require_once("./Views/show-weather.php");
                 break;
+            case '/select-city':
+                require_once("./Views/weather-form.php");
+                break;
             default:
                 http_response_code(404);
                 require_once("./Views/404.php");

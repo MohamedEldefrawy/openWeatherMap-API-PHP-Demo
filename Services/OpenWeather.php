@@ -1,11 +1,9 @@
 <?php
 
-use JetBrains\PhpStorm\ArrayShape;
-
 class OpenWeather
 {
 
-    #[ArrayShape(["description" => "mixed", "temp" => "mixed", "humidity" => "mixed", "wind" => "mixed", "icon" => "mixed", "timezone" => "mixed", "name" => "mixed"])] function getWeatherOfCity($cityName): array
+    function getWeatherOfCity($cityName): array
     {
         $curl = curl_init();
 
@@ -31,6 +29,7 @@ class OpenWeather
             "wind" => $json_response["wind"]["speed"],
             "icon" => $json_response["weather"][0]["icon"],
             "timezone" => $json_response["timezone"],
+            "sunset" => $json_response["sys"]["sunset"],
             "name" => $json_response["name"]
         ];
     }

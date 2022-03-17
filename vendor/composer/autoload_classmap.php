@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'CountryReader' => $baseDir . '/Utilities/CountryReader.php',
     'OpenWeather' => $baseDir . '/Services/OpenWeather.php',
     'Routes' => $baseDir . '/Utilities/Routes.php',
 );

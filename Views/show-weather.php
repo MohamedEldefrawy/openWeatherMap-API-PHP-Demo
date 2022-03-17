@@ -1,8 +1,23 @@
 <?php
+$cityName = "";
+if (isset($_POST["getWeather"])) {
+    if (isset($_POST["listOfCities"])) {
+        $cityName = $_POST["listOfCities"];
+    }
+}
 $openWeather = new OpenWeather();
-$result = $openWeather->getWeatherOfCity("Alexandria");
-var_dump($result["name"]);
-//var_dump($result);
+$result = $openWeather->getWeatherOfCity($cityName);
+$icon = "https://openweathermap.org/img/w/" . $result["icon"] . ".png";
 ?>
 
-<h1>Weather of <?= $result[1] ?></h1>
+<h1>Weather of <?= $result["name"] ?></h1>
+<div><?= date('m/d/Y H:i:s', $result['sunset']) ?></div>
+<div><?= $result['description'] ?></div>
+
+<div>
+    <img alt='icon' src="<?= $icon ?>"/>
+</div>
+
+<div><?= $result["temp"] ?></div>
+<div><strong>Humidity: </strong><?= $result["humidity"] ?></div>
+<div><strong>Wind: </strong><?= $result["wind"] ?></div>
