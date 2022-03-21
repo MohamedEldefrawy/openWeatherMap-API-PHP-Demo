@@ -23,6 +23,7 @@ This is a solution to the [PHP-openweathermap-Demo]
 
 - Native PHP
 - Curl
+- Guzzle
 - openweathermap API
 
 ## Author
