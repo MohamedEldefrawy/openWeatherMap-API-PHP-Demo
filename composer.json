@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "*"
   },
   "autoload": {
     "classmap": [

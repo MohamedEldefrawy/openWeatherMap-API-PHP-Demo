@@ -1,11 +1,13 @@
 <?php
 
-class OpenWeather
+class OpenWeatherCurl implements IOpenWeather
 {
 
     function getWeatherOfCity($cityName): array
     {
         $curl = curl_init();
+
+        $cityName = str_replace(" ", "%20", $cityName);
 
         curl_setopt_array($curl, [
             CURLOPT_URL => "https://community-open-weather-map.p.rapidapi.com/weather?q=" . $cityName . "%2Ceg&lang=null&units=metric&mode=JSON", CURLOPT_RETURNTRANSFER => true,
@@ -15,7 +17,7 @@ class OpenWeather
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => OPEN_WEATHER_CREDENTIALS,
+            CURLOPT_HTTPHEADER => Curl_OPEN_WEATHER_CREDENTIALS,
         ]);
 
         $response = curl_exec($curl);

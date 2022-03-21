@@ -30,7 +30,7 @@ $cities = $countryReader->get_cities("EG");
                     <option> -- choose city --</option>
                     <?php
                     foreach ($cities as $city) {
-                        echo "<option value=" . $city["name"] . ">" . $city["name"] . "</option>";
+                        echo "<option value='" . $city["name"] . "'>" . $city["name"] . "</option>";
                     }
                     ?>
                 </select>

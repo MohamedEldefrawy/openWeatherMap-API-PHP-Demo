@@ -5,8 +5,13 @@ if (isset($_POST["getWeather"])) {
         $cityName = $_POST["listOfCities"];
     }
 }
-$openWeather = new OpenWeather();
-$result = $openWeather->getWeatherOfCity($cityName);
+
+//$curlOpenWeather = new OpenWeatherCurl();
+$guzzlOpenWeather = new OpenWeatherGuzzle();
+$result = $guzzlOpenWeather->getWeatherOfCity($cityName);
+
+//$result = $curlOpenWeather->getWeatherOfCity($cityName);
+
 $icon = "https://openweathermap.org/img/w/" . $result["icon"] . ".png";
 ?>
 
